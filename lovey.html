@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lovey Srivastava | JNU</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: #fdfcfa;
+        color: #2c2c2c;
+    }
+
+    .page {
+        display: none;
+        height: 100vh;
+        padding: 40px;
+        text-align: center;
+        animation: fadeIn 1.2s ease;
+    }
+
+    .active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* JNU Theme */
+    :root {
+        --jnu-maroon: #7b1e2b;
+        --jnu-gold: #c9a44c;
+    }
+
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 80px;
+    }
+
+    img.profile {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--jnu-maroon);
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+        letter-spacing: 2px;
+        color: var(--jnu-maroon);
+        margin: 10px 0;
+    }
+
+    h2 {
+        font-weight: 400;
+        color: #555;
+        margin: 6px 0;
+    }
+
+    .info {
+        font-size: 15px;
+        margin-top: 8px;
+        color: #444;
+    }
+
+    .info a {
+        color: var(--jnu-maroon);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    button {
+        margin-top: 30px;
+        padding: 12px 32px;
+        font-size: 16px;
+        border-radius: 30px;
+        border: none;
+        background: var(--jnu-maroon);
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #5d1620;
+    }
+
+    .social-links {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        margin-top: 30px;
+    }
+
+    .social-links a {
+        width: 320px;
+        padding: 12px;
+        border: 2px solid var(--jnu-maroon);
+        border-radius: 40px;
+        text-decoration: none;
+        color: var(--jnu-maroon);
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        transition: 0.3s;
+    }
+
+    .social-links a:hover {
+        background: var(--jnu-maroon);
+        color: #fff;
+    }
+
+    .qr {
+        margin-top: 30px;
+    }
+
+    .thanks {
+        margin-top: 35px;
+        font-style: italic;
+        color: #666;
+    }
+</style>
+</head>
+<body>
+
+<!-- JNU Logo (replace image file name if needed) -->
+<img src="jnu-logo.png" class="logo" alt="JNU Logo">
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+    <img src="lovey.jpg" alt="Lovey Srivastava" class="profile">
+
+    <h1>LOVEY SRIVASTAVA</h1>
+    <h2>Faculty</h2>
+
+    <div class="info">Jawaharlal Nehru University, New Delhi</div>
+
+    <div class="info">
+        <i class="fas fa-location-dot"></i>
+        <a href="https://maps.google.com/?q=School+of+Language+and+Cultural+Studies+JNU" target="_blank">
+            School of Language and Cultural Studies, JNU
+        </a>
+    </div>
+
+    <button onclick="nextPage()">Next</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+    <h1>Connect With Me</h1>
+
+    <div class="social-links">
+        <a href="mailto:drloveysr@gmail.com">
+            <i class="fas fa-envelope"></i> drloveysr@gmail.com
+        </a>
+
+        <a href="https://wa.me/9818555155" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+
+        <a href="https://instagram.com/drloveysr" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+
+        <a href="linkedin.com/in/dr-lovey-srivastava-644b22293" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+
+        <a href="https://x.com/@drloveysr" target="_blank">
+            <i class="fab fa-x-twitter"></i> X (Twitter)
+        </a>
+    </div>
+
+    <!-- QR CODE -->
+    <div class="qr">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://yourwebsite.com"
+             alt="QR Code">
+        <div class="info">Scan to connect</div>
+    </div>
+
+    <div class="thanks">Thanks for Visiting</div>
+</div>
+
+<script>
+    function nextPage() {
+        document.getElementById("page1").classList.remove("active");
+        document.getElementById("page2").classList.add("active");
+    }
+</script>
+
+</body>
+</html>
